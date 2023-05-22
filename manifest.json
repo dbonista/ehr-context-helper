@@ -1,0 +1,13 @@
+{
+	"manifest_version": 3,
+	"name": "EHR Context Helper",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"js": ["context.js", "refresh.js"],
+			"matches": ["https://*.athenahealth.com/*"],
+			"run_at": "document_end",
+			"all_frames": true
+		}
+	]
+}
