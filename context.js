@@ -25,10 +25,12 @@ if (window.name == 'frMain') { //only load if we're in the clinical frame in Ath
 	// })
 
 	//set patient header(s) with new encounter element
-	Array.prototype.forEach.call(thirdline, element => {
-		enc_elem = document.createElement("li")
-		enc_elem.textContent = "ENC#" + target.encounter_id;
-		enc_elem.style.color = "white";
-		element.prepend(enc_elem);
-	})
+	if (target.encounter_id) {
+		Array.prototype.forEach.call(thirdline, element => {
+			enc_elem = document.createElement("li")
+			enc_elem.textContent = "ENC#" + target.encounter_id;
+			enc_elem.style.color = "white";
+			element.prepend(enc_elem);
+		});
+	}
 }
